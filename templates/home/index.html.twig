@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lista IMAGEN{% endblock %}
+
+{% block body %}
+
+<br></br>
+    <center><h1>LISTA IMAGEN</h1></center>
+<br></br>
+
+    <div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Descripcion</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for imagen in imagenes %}
+            <tr>
+                <td>{{ imagen.item }}</td>
+                <td>{{ imagen.descripcion }}</td>
+                <td>{{ imagen.image }}</td>
+                <td>
+                
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4"> </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+   <div class="container">
+    
+     </div>
+{% endblock %}

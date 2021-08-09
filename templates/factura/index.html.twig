@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CRUD IMAGEN{% endblock %}
+
+{% block body %}
+
+<br></br>
+    <center><h1>LISTA IMAGEN</h1></center>
+<br></br>
+
+    <div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Descripcion</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for imagen in facturas %}
+            <tr>
+                <td>{{ imagen.item }}</td>
+                <td>{{ imagen.descripcion }}</td>
+                <td>{{ imagen.image }}</td>
+                <td>
+                <a href="{{ path('factura_show', {'item': imagen.item}) }}" class="btn btn-danger">Eliminar</a>
+                <a href="{{ path('factura_edit', {'item': imagen.item}) }}" class="btn btn-success">Editar</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+   <div class="container">
+    <a href="{{ path('factura_new') }}" class="btn btn-primary">Nuevo</a>
+     </div>
+{% endblock %}
+
